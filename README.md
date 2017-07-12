@@ -1,2 +1,0 @@
-# sweet.calculator
-Sweet Calculator
