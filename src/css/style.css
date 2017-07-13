@@ -57,3 +57,6 @@ body {
       background-color: #f04635; }
     .calculator .body .button--secondary {
       background-color: #586575; }
+    .calculator .body .button--eval {
+      background-color: #f04635;
+      width: 260px; }

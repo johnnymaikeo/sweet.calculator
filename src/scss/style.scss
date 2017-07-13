@@ -93,6 +93,11 @@ body {
       background-color: $color-button--secondary;
     }
 
+    .button--eval {
+      background-color: $color-button--highlight;
+      width: 260px;
+    }
+
   }
 
 }
