@@ -1,3 +1,99 @@
-.title {
-  color: yellow;
+$color-background: #82cfe1;
+$color-calculator-header: #6f778a;
+$color-calculator-display: #eaecd6;
+$color-calculator-body: #ecf0f1;
+$color-calculator-border: #5a6676;
+$color-button--primary: #6f778a;
+$color-button--highlight: #f04635;
+$color-button--secondary: #586575;
+$border-radius: 10px;
+
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+body {
+  background-color: $color-background;
+  font-family: 'Audiowide', cursive;
 }
+
+.calculator {
+
+  width: 600px;
+  border-radius: $border-radius;
+  margin: 0 auto;
+
+  .header {
+    
+    background-color: $color-calculator-header;
+    padding: 40px;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    
+    .display {
+      background-color: $color-calculator-display;
+      border: 10px solid $color-calculator-border;
+      text-align: right;
+      border-radius: $border-radius;
+      padding:10px;
+
+      .display-upperline {
+        font-size: 1rem;
+        height: 21px;
+      }
+
+      .display-content {
+        font-size: 4rem;
+        height: 81px;
+      }
+
+    }
+
+  }
+
+  .body {
+    
+    background-color: $color-calculator-body;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left:10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    .button {
+      display: inline-block;
+      font-size: 3rem;
+      background-color: $color-button--primary;
+      height: 120px;
+      width: 120px;
+      margin: 10px;
+      border-radius: $border-radius;
+      color: white;
+      line-height: 120px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .button:active {
+      //background-color: #3e8e41;
+      background-color: black;
+      opacity: 0.5;
+      box-shadow: 0 3px #666;
+      transform: translateY(4px);
+    }
+
+    .button--highlight {
+      background-color: $color-button--highlight;
+    }
+
+    .button--secondary {
+      background-color: $color-button--secondary;
+    }
+
+  }
+
+}
+
