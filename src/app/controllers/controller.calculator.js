@@ -6,7 +6,7 @@ define(['app'], function (app) {
   function CalculatorController() {
 
     var vm = this;
-    vm.display = '1+((2+2)+(3+3))';
+    vm.display = '0';
     vm.upperline = '';
     vm.buttonPressClear = buttonPressClear;
     vm.buttonPressEval = buttonPressEval;
@@ -23,7 +23,7 @@ define(['app'], function (app) {
     ////////////////
 
     function activate() {
-      console.log('CalculatorController');
+      //
     }
 
     function buttonPress(value) {
@@ -31,7 +31,10 @@ define(['app'], function (app) {
         if (vm.display === '0' || vm.display === 'ERROR') {
           vm.display = '';
           vm.upperline = '';
-        }  
+        }
+        if (vm.display === '' && value === '.') {
+          vm.display += '0';
+        }
         vm.display += value;
       } else {
         error('max 10 caracters');
@@ -80,6 +83,9 @@ define(['app'], function (app) {
       var result = expressionEval(expression);
       if (result) {
         vm.display = vm.display.replace(expression, result);
+        if (vm.display.length > 10) {
+          vm.display = vm.display.slice(0, 10);
+        }
       } else {
         error('Invalid expression evaluated');
       }
@@ -88,9 +94,11 @@ define(['app'], function (app) {
     function expressionEval(expression) {
       const regex = /([\(\)])/g;
       expression = expression.replace(regex, '');
+
       const explode = /([-+/*])/gi;
       var array = expression.split(explode);
       var i, previous, next, result;
+
       if (array.length == 2) {
         return null;
       } else if (array.length == 1) {
@@ -112,6 +120,7 @@ define(['app'], function (app) {
           }
         } 
       }
+
       return array[0];
     }
 
