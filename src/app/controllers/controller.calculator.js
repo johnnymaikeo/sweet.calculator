@@ -27,19 +27,16 @@ define(['app'], function (app) {
     }
 
     function buttonPress(value) {
-      if (vm.display === '0' || vm.display === 'ERROR') {
-        vm.display = '';
-        vm.upperline = '';
-      }
-      if (vm.display == '' && value == '00') {
-        vm.display = '0'
-      }
-    
-      if (vm.display.length == 10) {
+      if (vm.display.length <= 10) {
+        if (vm.display === '0' || vm.display === 'ERROR') {
+          vm.display = '';
+          vm.upperline = '';
+        }  
+        vm.display += value;
+      } else {
         error('max 10 caracters');
         return
       }
-      vm.display += value;
     }
 
     function keyPress(event) {
@@ -75,8 +72,8 @@ define(['app'], function (app) {
     ////////////////
 
     function error(message) {
-        vm.display = 'ERROR';
-        vm.upperline = message;
+      vm.display = 'ERROR';
+      vm.upperline = message;
     }
     
     function execute(expression) {
@@ -91,7 +88,7 @@ define(['app'], function (app) {
     function expressionEval(expression) {
       const regex = /([\(\)])/g;
       expression = expression.replace(regex, '');
-      const explode = /([+-/*])/gi;
+      const explode = /([-+/*])/gi;
       var array = expression.split(explode);
       var i, previous, next, result;
       if (array.length == 2) {
