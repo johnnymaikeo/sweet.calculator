@@ -1,5 +1,7 @@
 # Sweet Calculator
 
+![sweet calculator](https://raw.githubusercontent.com/johnnymaikeo/sweet.calculator/master/sweet.calculator.png)
+
 ## How to Run
 
 Sweet Calculator requires an HTTP server run, to quickly start we suggest a Node lightweight HTTP server.
