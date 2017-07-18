@@ -1,10 +1,10 @@
 require([
   'angular',
   'app',
-  'controllers/controller.calculator',
-  'directives/directive.calculator',
-  'directives/directive.calculator-display',
-  'directives/directive.calculator-button'
+  'controllers/controller.calculator.dev',
+  'directives/directive.calculator.dev',
+  'directives/directive.calculator-display.dev',
+  'directives/directive.calculator-button.dev',
 ], function (angular) {
 
   angular.element(document).ready(function () {

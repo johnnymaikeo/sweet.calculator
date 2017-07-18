@@ -1,0 +1,27 @@
+<div class="calculator">
+  <div class="header">
+    <calculator-display display="{{vm.display}}" uperline="{{vm.upperline}}"></calculator-display>
+  </div>
+  <div class="body">
+    <calculator-button display="C" modifier="button--secondary" ng-click="vm.buttonPressClear()"></calculator-button>
+    <calculator-button display="(" modifier="button--secondary" ng-click="vm.buttonPress('(')"></calculator-button>
+    <calculator-button display=")" modifier="button--secondary" ng-click="vm.buttonPress(')')"></calculator-button>
+    <calculator-button display="&#x00F7;" modifier="button--highlight" ng-click="vm.buttonPress('/')"></calculator-button>
+    <calculator-button display="7" ng-click="vm.buttonPress('7')"></calculator-button>
+    <calculator-button display="8" ng-click="vm.buttonPress('8')"></calculator-button>
+    <calculator-button display="9" ng-click="vm.buttonPress('9')"></calculator-button>
+    <calculator-button display="x" modifier="button--highlight" ng-click="vm.buttonPress('*')"></calculator-button>
+    <calculator-button display="4" ng-click="vm.buttonPress('4')"></calculator-button>
+    <calculator-button display="5" ng-click="vm.buttonPress('5')"></calculator-button>
+    <calculator-button display="6" ng-click="vm.buttonPress('6')"></calculator-button>
+    <calculator-button display="-" modifier="button--highlight" ng-click="vm.buttonPress('-')"></calculator-button>
+    <calculator-button display="1" ng-click="vm.buttonPress('1')"></calculator-button>
+    <calculator-button display="2" ng-click="vm.buttonPress('2')"></calculator-button>
+    <calculator-button display="3" ng-click="vm.buttonPress('3')"></calculator-button>
+    <calculator-button display="+" modifier="button--highlight" ng-click="vm.buttonPress('+')"></calculator-button>
+    <calculator-button display="0" ng-click="vm.buttonPress('0')"></calculator-button>
+    <!--<calculator-button display="00" ng-click="vm.buttonPress('00')"></calculator-button>-->
+    <calculator-button display="." ng-click="vm.buttonPress('.')"></calculator-button>
+    <calculator-button display="=" modifier="button--eval" ng-click="vm.buttonPressEval()"></calculator-button>
+  </div>
+</div>
